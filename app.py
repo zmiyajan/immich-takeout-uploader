@@ -968,25 +968,25 @@ PAGE = u"""<!doctype html>
             <div class="head"><label class="t" for="syncAlbums" data-i18n="o_albums"></label><button type="button" class="i" data-help="hp-syncAlbums" aria-expanded="false">i</button></div>
             <div class="p mono">album.read · album.create · albumAsset.create</div>
             <div class="help" id="hp-syncAlbums" data-i18n-html="h_syncAlbums"></div>
-          </div></div></div>
+          </div></div>
     <div class="opt"><input type="checkbox" id="peopleTag" checked>
           <div class="body">
             <div class="head"><label class="t" for="peopleTag" data-i18n="o_people"></label><button type="button" class="i" data-help="hp-peopleTag" aria-expanded="false">i</button></div>
             <div class="p mono">tag.create · tag.asset</div>
             <div class="help" id="hp-peopleTag" data-i18n-html="h_peopleTag"></div>
-          </div></div></div>
+          </div></div>
     <div class="opt"><input type="checkbox" id="takeoutTag" checked>
           <div class="body">
             <div class="head"><label class="t" for="takeoutTag" data-i18n="o_takeout"></label><button type="button" class="i" data-help="hp-takeoutTag" aria-expanded="false">i</button></div>
             <div class="p mono">tag.create · tag.asset</div>
             <div class="help" id="hp-takeoutTag" data-i18n-html="h_takeoutTag"></div>
-          </div></div></div>
+          </div></div>
     <div class="opt"><input type="checkbox" id="continueOnError" checked>
           <div class="body">
             <div class="head"><label class="t" for="continueOnError" data-i18n="o_continue"></label><button type="button" class="i" data-help="hp-continueOnError" aria-expanded="false">i</button></div>
             <div class="p mono">--on-errors=continue</div>
             <div class="help" id="hp-continueOnError" data-i18n-html="h_continueOnError"></div>
-          </div></div></div>
+          </div></div>
 
     <details class="grp">
       <summary><span data-icon="zip" data-size="17"></span><span data-i18n="g_content"></span></summary>
@@ -996,31 +996,31 @@ PAGE = u"""<!doctype html>
             <div class="head"><label class="t" for="includeArchived" data-i18n="o_archived"></label><button type="button" class="i" data-help="hp-includeArchived" aria-expanded="false">i</button></div>
             <div class="p mono">--include-archived</div>
             <div class="help" id="hp-includeArchived" data-i18n-html="h_includeArchived"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="includePartner" checked>
           <div class="body">
             <div class="head"><label class="t" for="includePartner" data-i18n="o_partner"></label><button type="button" class="i" data-help="hp-includePartner" aria-expanded="false">i</button></div>
             <div class="p mono">--include-partner</div>
             <div class="help" id="hp-includePartner" data-i18n-html="h_includePartner"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="includeUntitled">
           <div class="body">
             <div class="head"><label class="t" for="includeUntitled" data-i18n="o_untitled"></label><span class="risk caution" data-i18n="r_caution"></span><button type="button" class="i" data-help="hp-includeUntitled" aria-expanded="false">i</button></div>
             <div class="p mono">--include-untitled-albums</div>
             <div class="help" id="hp-includeUntitled" data-i18n-html="h_includeUntitled"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="includeTrashed">
           <div class="body">
             <div class="head"><label class="t" for="includeTrashed" data-i18n="o_trashed"></label><span class="risk caution" data-i18n="r_caution"></span><button type="button" class="i" data-help="hp-includeTrashed" aria-expanded="false">i</button></div>
             <div class="p mono">--include-trashed</div>
             <div class="help" id="hp-includeTrashed" data-i18n-html="h_includeTrashed"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="includeUnmatched">
           <div class="body">
             <div class="head"><label class="t" for="includeUnmatched" data-i18n="o_unmatched"></label><span class="risk caution" data-i18n="r_caution"></span><button type="button" class="i" data-help="hp-includeUnmatched" aria-expanded="false">i</button></div>
             <div class="p mono">--include-unmatched</div>
             <div class="help" id="hp-includeUnmatched" data-i18n-html="h_includeUnmatched"></div>
-          </div></div></div>
+          </div></div>
         <div class="cols" style="margin-top:13px">
           <div class="field"><label><span data-i18n="l_type"></span><button type="button" class="i" data-help="hf-h_includeType-1" aria-expanded="false">i</button></label><div class="help" id="hf-h_includeType-1" data-i18n-html="h_includeType" style="margin-bottom:8px"></div>
             <select id="includeType">
@@ -1069,7 +1069,7 @@ PAGE = u"""<!doctype html>
             <div class="head"><label class="t" for="epsonFastFoto" data-i18n="o_epson"></label><button type="button" class="i" data-help="hp-epsonFastFoto" aria-expanded="false">i</button></div>
             <div class="p mono">--manage-epson-fastfoto</div>
             <div class="help" id="hp-epsonFastFoto" data-i18n-html="h_epson"></div>
-          </div></div></div>
+          </div></div>
       </div>
     </details>
 
@@ -1081,7 +1081,7 @@ PAGE = u"""<!doctype html>
             <div class="head"><label class="t" for="sessionTag" data-i18n="o_session"></label><button type="button" class="i" data-help="hp-sessionTag" aria-expanded="false">i</button></div>
             <div class="p mono">--session-tag · tag.create</div>
             <div class="help" id="hp-sessionTag" data-i18n-html="h_sessionTag"></div>
-          </div></div></div>
+          </div></div>
         <div class="field" style="margin-top:13px"><label><span data-i18n="l_tags"></span><button type="button" class="i" data-help="hf-h_tags-1" aria-expanded="false">i</button></label><div class="help" id="hf-h_tags-1" data-i18n-html="h_tags" style="margin-bottom:8px"></div>
           <input type="text" id="tags" placeholder="migration/2015, family">
           <p class="hintline" data-i18n-html="d_tags"></p></div>
@@ -1108,19 +1108,19 @@ PAGE = u"""<!doctype html>
             <div class="head"><label class="t" for="overwrite" data-i18n="o_overwrite"></label><span class="risk danger" data-i18n="r_danger"></span><button type="button" class="i" data-help="hp-overwrite" aria-expanded="false">i</button></div>
             <div class="p mono">--overwrite · asset.delete</div>
             <div class="help" id="hp-overwrite" data-i18n-html="h_overwrite"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="skipVerifySSL">
           <div class="body">
             <div class="head"><label class="t" for="skipVerifySSL" data-i18n="o_ssl"></label><span class="risk privacy" data-i18n="r_privacy"></span><button type="button" class="i" data-help="hp-skipVerifySSL" aria-expanded="false">i</button></div>
             <div class="p mono">--skip-verify-ssl</div>
             <div class="help" id="hp-skipVerifySSL" data-i18n-html="h_skipVerifySSL"></div>
-          </div></div></div>
+          </div></div>
         <div class="opt"><input type="checkbox" id="apiTrace">
           <div class="body">
             <div class="head"><label class="t" for="apiTrace" data-i18n="o_trace"></label><span class="risk privacy" data-i18n="r_privacy"></span><button type="button" class="i" data-help="hp-apiTrace" aria-expanded="false">i</button></div>
             <div class="p mono">--api-trace</div>
             <div class="help" id="hp-apiTrace" data-i18n-html="h_apiTrace"></div>
-          </div></div></div>
+          </div></div>
       </div>
     </details>
   </section>
