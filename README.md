@@ -95,9 +95,11 @@ macOS blocks Terminal from reading external volumes until you allow it. The symp
 ## Screenshots
 
 <div align="center">
-<img src="docs/screenshot-dark.png" width="49%" alt="Dark theme">
-<img src="docs/screenshot-light.png" width="49%" alt="Light theme">
+<img src="docs/screenshot-dark.png" width="49%" alt="English interface">
+<img src="docs/screenshot-rtl.png" width="49%" alt="Arabic interface, right to left">
 </div>
+
+<div align="center"><sub>English and Arabic. A light theme is included and follows the system setting by default.</sub></div>
 
 ## Adding a language
 
