@@ -731,17 +731,21 @@ html[dir=rtl] .tag{text-align:right}
 .shead .sub{font-size:var(--t-sm);color:var(--faint);margin-inline-start:auto}
 
 /* --- control: one shape for every switch, box and dropdown ---------------- */
-.ctl{display:flex;align-items:flex-start;gap:var(--s3);padding:var(--s3) 0}
+/* The control column is always reserved, whether or not there is a checkbox to
+   put in it, so every title, hint and panel starts on the same edge. Without it
+   a switch reads as nested one level deeper than the field above it. */
+.ctl{display:grid;grid-template-columns:16px 1fr;gap:var(--s3);
+     align-items:start;padding:var(--s4) 0}
 .ctl + .ctl,.cols + .ctl,.ctl + .cols,.cols + .cols{border-top:1px solid var(--edge)}
 .ctl > input[type=checkbox]{width:16px;height:16px;accent-color:var(--primary);
-     margin-top:3px;flex:none;cursor:pointer}
-.ctl-body{flex:1;min-width:0}
-.ctl-head{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap}
+     margin-top:4px;cursor:pointer;grid-column:1}
+.ctl-body{grid-column:2;min-width:0}
+.ctl-head{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap;min-height:20px}
 .ctl-title{font-size:var(--t-md);font-weight:500;color:var(--fg);margin:0;cursor:pointer}
 .ctl-field .ctl-title{cursor:default}
 .hint{font-size:var(--t-sm);color:var(--dim);margin:var(--s1) 0 0;line-height:1.55}
-.ctl-field .hint{margin-bottom:var(--s2)}
-.cols{display:flex;gap:var(--s5);flex-wrap:wrap;align-items:flex-start;padding:var(--s3) 0}
+.ctl-field .hint{margin-bottom:var(--s3)}
+.cols{display:flex;gap:var(--s5);flex-wrap:wrap;align-items:flex-start;padding:var(--s4) 0}
 .cols > .ctl{flex:1;min-width:220px;padding:0;border-top:0}
 
 input[type=text],input[type=password],input[type=number],select{
@@ -767,6 +771,9 @@ input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0
    transition has to guess the content size and clips whatever it gets wrong. */
 .help{display:none}
 .help.open{display:block;margin-top:var(--s3);animation:reveal var(--ease)}
+/* One measure of air above the panel, and none below: the row's own
+   padding already separates it from whatever follows. */
+.ctl-field .help.open{margin-top:var(--s3)}
 @keyframes reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .help-inner{background:var(--bg);border:1px solid var(--edge);border-radius:var(--r-md);
       font-size:var(--t-sm);color:var(--dim);position:relative;padding:var(--s3) var(--s4)}
