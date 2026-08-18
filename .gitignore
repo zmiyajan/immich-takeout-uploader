@@ -1,0 +1,8 @@
+last-run.log
+server.log
+tunnel.command
+.immich-go-tmp/
+immich-go
+.DS_Store
+__pycache__/
+*.pyc
