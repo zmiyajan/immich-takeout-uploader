@@ -747,6 +747,11 @@ html[dir=rtl] .tag{text-align:right}
 .ctl-field .hint{margin-bottom:var(--s3)}
 .cols{display:flex;gap:var(--s5);flex-wrap:wrap;align-items:flex-start;padding:var(--s4) 0}
 .cols > .ctl{flex:1;min-width:220px;padding:0;border-top:0}
+/* Opening a panel un-stacks the pair, so the explanation reads across the card
+   instead of down a half-width ribbon, while staying under its own field. */
+.cols.stacked{display:block}
+.cols.stacked > .ctl + .ctl{margin-top:var(--s4);padding-top:var(--s4);
+     border-top:1px solid var(--edge)}
 
 input[type=text],input[type=password],input[type=number],select{
   width:100%;padding:11px var(--s4);background:var(--bg);border:1px solid var(--edge);
@@ -784,7 +789,7 @@ input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0
 .help-inner b{color:var(--fg);font-weight:600}
 .help-inner p{margin:var(--s2) 0 0;line-height:var(--lh-body)}
 .meta2{display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-       margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--edge)}
+       margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--edge)}
 .meta2 .lbl{font-size:var(--t-xs);color:var(--faint)}
 .meta2 .lbl:not(:first-child){margin-inline-start:var(--s2)}
 
@@ -946,6 +951,7 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="server" data-i18n="l_server"></label><button type="button" class="i" data-help="hp-server" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_server"></p>
             <input type="text" id="server" placeholder="http://192.168.1.50:2283">
+            <div class="help" id="hp-server"><div class="help-inner" data-i18n-html="d_server" data-flag="--server" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -953,11 +959,10 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="apiKey" data-i18n="l_key"></label><button type="button" class="i" data-help="hp-apiKey" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_key"></p>
             <input type="password" id="apiKey" data-i18n-ph="ph_key">
+            <div class="help" id="hp-apiKey"><div class="help-inner" data-i18n-html="d_perms" data-flag="--api-key" data-perms=""></div></div>
           </div>
         </div>
         </div>
-        <div class="help" id="hp-server"><div class="help-inner" data-i18n-html="d_server" data-flag="--server" data-perms=""></div></div>
-        <div class="help" id="hp-apiKey"><div class="help-inner" data-i18n-html="d_perms" data-flag="--api-key" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="adminKey" data-i18n="l_admin"></label><button type="button" class="i" data-help="hp-adminKey" aria-expanded="false">i</button></div>
@@ -1093,6 +1098,7 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="includeType" data-i18n="l_type"></label><button type="button" class="i" data-help="hp-includeType" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_includeType"></p>
             <select id="includeType"><option value="all" data-i18n="v_all"></option><option value="IMAGE" data-i18n="v_image"></option><option value="VIDEO" data-i18n="v_video"></option></select>
+            <div class="help" id="hp-includeType"><div class="help-inner" data-i18n-html="h_includeType" data-flag="--include-type" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1100,17 +1106,17 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="fromAlbum" data-i18n="l_album"></label><button type="button" class="i" data-help="hp-fromAlbum" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_fromAlbum"></p>
             <input type="text" id="fromAlbum" placeholder="Vacation 2019">
+            <div class="help" id="hp-fromAlbum"><div class="help-inner" data-i18n-html="h_fromAlbum" data-flag="--from-album-name" data-perms=""></div></div>
           </div>
         </div>
         </div>
-        <div class="help" id="hp-includeType"><div class="help-inner" data-i18n-html="h_includeType" data-flag="--include-type" data-perms=""></div></div>
-        <div class="help" id="hp-fromAlbum"><div class="help-inner" data-i18n-html="h_fromAlbum" data-flag="--from-album-name" data-perms=""></div></div>
         <div class="cols">
           <div class="ctl ctl-field">
             <div class="ctl-body">
               <div class="ctl-head"><label class="ctl-title" for="includeExt" data-i18n="l_incext"></label><button type="button" class="i" data-help="hp-includeExt" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_extensions"></p>
             <input type="text" id="includeExt" placeholder=".jpg,.heic">
+            <div class="help" id="hp-includeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--include-extensions" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1118,11 +1124,10 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="excludeExt" data-i18n="l_excext"></label><button type="button" class="i" data-help="hp-excludeExt" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_extensions"></p>
             <input type="text" id="excludeExt" placeholder=".gif,.mp">
+            <div class="help" id="hp-excludeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--exclude-extensions" data-perms=""></div></div>
           </div>
         </div>
         </div>
-        <div class="help" id="hp-includeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--include-extensions" data-perms=""></div></div>
-        <div class="help" id="hp-excludeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--exclude-extensions" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="dateRange" data-i18n="l_daterange"></label><button type="button" class="i" data-help="hp-dateRange" aria-expanded="false">i</button></div>
@@ -1142,6 +1147,7 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="manageRawJpeg" data-i18n="l_rawjpeg"></label><button type="button" class="i" data-help="hp-manageRawJpeg" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_pairs"></p>
             <select id="manageRawJpeg"><option value="NoStack">NoStack</option><option value="KeepRaw">KeepRaw</option><option value="KeepJPG">KeepJPG</option><option value="StackCoverRaw">StackCoverRaw</option><option value="StackCoverJPG">StackCoverJPG</option></select>
+            <div class="help" id="hp-manageRawJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-raw-jpeg" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1149,11 +1155,10 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="manageHeicJpeg" data-i18n="l_heicjpeg"></label><button type="button" class="i" data-help="hp-manageHeicJpeg" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_pairs"></p>
             <select id="manageHeicJpeg"><option value="NoStack">NoStack</option><option value="KeepHeic">KeepHeic</option><option value="KeepJPG">KeepJPG</option><option value="StackCoverHeic">StackCoverHeic</option><option value="StackCoverJPG">StackCoverJPG</option></select>
+            <div class="help" id="hp-manageHeicJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-heic-jpeg" data-perms=""></div></div>
           </div>
         </div>
         </div>
-        <div class="help" id="hp-manageRawJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-raw-jpeg" data-perms=""></div></div>
-        <div class="help" id="hp-manageHeicJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-heic-jpeg" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="manageBurst" data-i18n="l_burst"></label><button type="button" class="i" data-help="hp-manageBurst" aria-expanded="false">i</button></div>
@@ -1210,6 +1215,7 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="concurrent" data-i18n="l_conc"></label><button type="button" class="i" data-help="hp-concurrent" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_concurrent"></p>
             <input type="number" id="concurrent" value="6" min="1" max="20">
+            <div class="help" id="hp-concurrent"><div class="help-inner" data-i18n-html="h_concurrent" data-flag="--concurrent-tasks" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1217,11 +1223,10 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="clientTimeout" data-i18n="l_timeout"></label><button type="button" class="i" data-help="hp-clientTimeout" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_clientTimeout"></p>
             <input type="text" id="clientTimeout" placeholder="20m">
+            <div class="help" id="hp-clientTimeout"><div class="help-inner" data-i18n-html="h_clientTimeout" data-flag="--client-timeout" data-perms=""></div></div>
           </div>
         </div>
         </div>
-        <div class="help" id="hp-concurrent"><div class="help-inner" data-i18n-html="h_concurrent" data-flag="--concurrent-tasks" data-perms=""></div></div>
-        <div class="help" id="hp-clientTimeout"><div class="help-inner" data-i18n-html="h_clientTimeout" data-flag="--client-timeout" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="timeZone" data-i18n="l_tz"></label><button type="button" class="i" data-help="hp-timeZone" aria-expanded="false">i</button></div>
@@ -1662,6 +1667,10 @@ document.addEventListener("click", function (e) {
     var panel = $(help.getAttribute("data-help"));
     var open = panel.classList.toggle("open");
     help.setAttribute("aria-expanded", open ? "true" : "false");
+    /* A pair of side-by-side controls stacks while either explanation is open,
+       so the text is not squeezed into half the card. */
+    var pair = panel.closest(".cols");
+    if (pair) { pair.classList.toggle("stacked", !!pair.querySelector(".help.open")); }
     return;
   }
   var src = e.target.closest && e.target.closest("[data-src]");
