@@ -946,7 +946,6 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="server" data-i18n="l_server"></label><button type="button" class="i" data-help="hp-server" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_server"></p>
             <input type="text" id="server" placeholder="http://192.168.1.50:2283">
-            <div class="help" id="hp-server"><div class="help-inner" data-i18n-html="d_server" data-flag="--server" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -954,10 +953,11 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="apiKey" data-i18n="l_key"></label><button type="button" class="i" data-help="hp-apiKey" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_key"></p>
             <input type="password" id="apiKey" data-i18n-ph="ph_key">
-            <div class="help" id="hp-apiKey"><div class="help-inner" data-i18n-html="d_perms" data-flag="--api-key" data-perms=""></div></div>
           </div>
         </div>
         </div>
+        <div class="help" id="hp-server"><div class="help-inner" data-i18n-html="d_server" data-flag="--server" data-perms=""></div></div>
+        <div class="help" id="hp-apiKey"><div class="help-inner" data-i18n-html="d_perms" data-flag="--api-key" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="adminKey" data-i18n="l_admin"></label><button type="button" class="i" data-help="hp-adminKey" aria-expanded="false">i</button></div>
@@ -975,8 +975,7 @@ footer a{color:var(--faint)}
   </section>
 
   <section class="step" id="s2">
-    <div class="shead"><span class="num" data-icon="zip" data-size="20"></span><h2 data-i18n="s2"></h2><span class="sub" id="selInfo"></span>
-      <button type="button" class="i" data-help="h-files" aria-expanded="false">i</button></div>
+    <div class="shead"><span class="num" data-icon="zip" data-size="20"></span><h2 data-i18n="s2"></h2><button type="button" class="i" data-help="h-files" aria-expanded="false">i</button><span class="sub" id="selInfo"></span></div>
     <div class="help" id="h-files"><div class="help-inner" data-i18n-html="d_why"></div></div>
     <div class="seg" role="group">
       <button type="button" class="segbtn on" data-src="zip"><span data-icon="zip" data-size="15"></span><span data-i18n="src_zip"></span></button>
@@ -1094,7 +1093,6 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="includeType" data-i18n="l_type"></label><button type="button" class="i" data-help="hp-includeType" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_includeType"></p>
             <select id="includeType"><option value="all" data-i18n="v_all"></option><option value="IMAGE" data-i18n="v_image"></option><option value="VIDEO" data-i18n="v_video"></option></select>
-            <div class="help" id="hp-includeType"><div class="help-inner" data-i18n-html="h_includeType" data-flag="--include-type" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1102,17 +1100,17 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="fromAlbum" data-i18n="l_album"></label><button type="button" class="i" data-help="hp-fromAlbum" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_fromAlbum"></p>
             <input type="text" id="fromAlbum" placeholder="Vacation 2019">
-            <div class="help" id="hp-fromAlbum"><div class="help-inner" data-i18n-html="h_fromAlbum" data-flag="--from-album-name" data-perms=""></div></div>
           </div>
         </div>
         </div>
+        <div class="help" id="hp-includeType"><div class="help-inner" data-i18n-html="h_includeType" data-flag="--include-type" data-perms=""></div></div>
+        <div class="help" id="hp-fromAlbum"><div class="help-inner" data-i18n-html="h_fromAlbum" data-flag="--from-album-name" data-perms=""></div></div>
         <div class="cols">
           <div class="ctl ctl-field">
             <div class="ctl-body">
               <div class="ctl-head"><label class="ctl-title" for="includeExt" data-i18n="l_incext"></label><button type="button" class="i" data-help="hp-includeExt" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_extensions"></p>
             <input type="text" id="includeExt" placeholder=".jpg,.heic">
-            <div class="help" id="hp-includeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--include-extensions" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1120,10 +1118,11 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="excludeExt" data-i18n="l_excext"></label><button type="button" class="i" data-help="hp-excludeExt" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_extensions"></p>
             <input type="text" id="excludeExt" placeholder=".gif,.mp">
-            <div class="help" id="hp-excludeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--exclude-extensions" data-perms=""></div></div>
           </div>
         </div>
         </div>
+        <div class="help" id="hp-includeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--include-extensions" data-perms=""></div></div>
+        <div class="help" id="hp-excludeExt"><div class="help-inner" data-i18n-html="h_extensions" data-flag="--exclude-extensions" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="dateRange" data-i18n="l_daterange"></label><button type="button" class="i" data-help="hp-dateRange" aria-expanded="false">i</button></div>
@@ -1143,7 +1142,6 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="manageRawJpeg" data-i18n="l_rawjpeg"></label><button type="button" class="i" data-help="hp-manageRawJpeg" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_pairs"></p>
             <select id="manageRawJpeg"><option value="NoStack">NoStack</option><option value="KeepRaw">KeepRaw</option><option value="KeepJPG">KeepJPG</option><option value="StackCoverRaw">StackCoverRaw</option><option value="StackCoverJPG">StackCoverJPG</option></select>
-            <div class="help" id="hp-manageRawJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-raw-jpeg" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1151,10 +1149,11 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="manageHeicJpeg" data-i18n="l_heicjpeg"></label><button type="button" class="i" data-help="hp-manageHeicJpeg" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_pairs"></p>
             <select id="manageHeicJpeg"><option value="NoStack">NoStack</option><option value="KeepHeic">KeepHeic</option><option value="KeepJPG">KeepJPG</option><option value="StackCoverHeic">StackCoverHeic</option><option value="StackCoverJPG">StackCoverJPG</option></select>
-            <div class="help" id="hp-manageHeicJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-heic-jpeg" data-perms=""></div></div>
           </div>
         </div>
         </div>
+        <div class="help" id="hp-manageRawJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-raw-jpeg" data-perms=""></div></div>
+        <div class="help" id="hp-manageHeicJpeg"><div class="help-inner" data-i18n-html="h_pairs" data-flag="--manage-heic-jpeg" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="manageBurst" data-i18n="l_burst"></label><button type="button" class="i" data-help="hp-manageBurst" aria-expanded="false">i</button></div>
@@ -1211,7 +1210,6 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="concurrent" data-i18n="l_conc"></label><button type="button" class="i" data-help="hp-concurrent" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_concurrent"></p>
             <input type="number" id="concurrent" value="6" min="1" max="20">
-            <div class="help" id="hp-concurrent"><div class="help-inner" data-i18n-html="h_concurrent" data-flag="--concurrent-tasks" data-perms=""></div></div>
           </div>
         </div>
           <div class="ctl ctl-field">
@@ -1219,10 +1217,11 @@ footer a{color:var(--faint)}
               <div class="ctl-head"><label class="ctl-title" for="clientTimeout" data-i18n="l_timeout"></label><button type="button" class="i" data-help="hp-clientTimeout" aria-expanded="false">i</button></div>
             <p class="hint" data-i18n="s_clientTimeout"></p>
             <input type="text" id="clientTimeout" placeholder="20m">
-            <div class="help" id="hp-clientTimeout"><div class="help-inner" data-i18n-html="h_clientTimeout" data-flag="--client-timeout" data-perms=""></div></div>
           </div>
         </div>
         </div>
+        <div class="help" id="hp-concurrent"><div class="help-inner" data-i18n-html="h_concurrent" data-flag="--concurrent-tasks" data-perms=""></div></div>
+        <div class="help" id="hp-clientTimeout"><div class="help-inner" data-i18n-html="h_clientTimeout" data-flag="--client-timeout" data-perms=""></div></div>
         <div class="ctl ctl-field">
           <div class="ctl-body">
             <div class="ctl-head"><label class="ctl-title" for="timeZone" data-i18n="l_tz"></label><button type="button" class="i" data-help="hp-timeZone" aria-expanded="false">i</button></div>
@@ -1260,8 +1259,7 @@ footer a{color:var(--faint)}
   </section>
 
   <section class="step" id="s4">
-    <div class="shead"><span class="num" data-icon="upload" data-size="20"></span><h2 data-i18n="s4"></h2><span class="sub" id="runState"></span>
-      <button type="button" class="i" data-help="h-run" aria-expanded="false">i</button></div>
+    <div class="shead"><span class="num" data-icon="upload" data-size="20"></span><h2 data-i18n="s4"></h2><button type="button" class="i" data-help="h-run" aria-expanded="false">i</button><span class="sub" id="runState"></span></div>
     <div class="help" id="h-run"><div class="help-inner" data-i18n-html="d_run"></div></div>
     <div class="bar">
       <button type="button" class="go" id="dryBtn" onclick="start(true)"><span data-icon="flask" data-size="17"></span><span data-i18n="b_dry"></span></button>
