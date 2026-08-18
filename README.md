@@ -36,24 +36,44 @@ This tool is a small local web UI that gets those four things right by construct
 | **Won't let the machine sleep** | Wraps the run in `caffeinate` on macOS. |
 | **Takes zips or a folder** | Either the numbered zip parts or one already extracted takeout directory. |
 | **Themed to match Immich** | Light and dark, following Immich's own colour tokens. |
+| **Installs immich-go for you** | Detects your OS and CPU and fetches the matching release, so Python is the only prerequisite. |
+| **Every immich-go flag** | Content filters, RAW/HEIC/burst grouping, tags, date ranges and timeouts, each labelled with the flag it sets. |
+| **Presets from the upstream guide** | Four configurations matching what immich-go recommends for small, medium, large and slow-network imports. |
+
+## Install
+
+One file, one command:
+
+```bash
+curl -fsSLO https://raw.githubusercontent.com/zmiyajan/immich-takeout-uploader/main/app.py && python3 app.py
+```
+
+That downloads the app and opens <http://127.0.0.1:8765>. Nothing is installed system-wide and nothing is hidden — you can read `app.py` before running it.
+
+If you would rather it live in its own folder with a double-clickable launcher:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/zmiyajan/immich-takeout-uploader/main/install.sh | sh
+```
+
+Piping a script into a shell means trusting it unread; the one-file command above does the same job and lets you inspect it first.
+
+Or clone it:
+
+```bash
+git clone https://github.com/zmiyajan/immich-takeout-uploader.git
+cd immich-takeout-uploader && python3 app.py
+```
+
+Work through four steps: server → files → options → run. Set `IG_PORT` for a different port.
 
 ## Requirements
 
-- Python 3.6 or newer (macOS and most Linux distributions ship it)
-- [`immich-go`](https://github.com/simulot/immich-go/releases/latest) on `PATH`, in `~/.local/bin/`, or beside `app.py`
-- A running Immich server and an API key
+**Python 3.6 or newer.** That's the whole list — macOS and every mainstream Linux distribution already ship it.
 
-## Usage
+`immich-go` is fetched by the app itself: if it isn't on the machine, the first screen offers an install button that downloads the release matching your OS and CPU into `~/.local/bin`. Downloading it that way also sidesteps the macOS quarantine flag that makes Gatekeeper kill a browser-downloaded binary on launch.
 
-```bash
-git clone https://github.com/YOUR-USERNAME/immich-takeout-uploader.git
-cd immich-takeout-uploader
-python3 app.py
-```
-
-Open <http://127.0.0.1:8765> and work through four steps: server → files → options → run.
-
-Set `IG_PORT` to use a different port.
+You'll also need a running Immich server and an API key, covered below.
 
 > **The server binds to `127.0.0.1` only.** Your API key travels through this page, so it is never exposed to the network. To use it on a headless machine, tunnel rather than binding wider:
 > ```bash
@@ -72,7 +92,9 @@ album.read         album.create       albumAsset.create
 
 Add `tag.create` and `tag.asset` if you want people tags. **Do not use "Select all"** — it grants delete and key-creation rights that importing never needs.
 
-This list was derived by tracing every API call in `immich-go`'s upload path rather than copied from documentation. Write scopes cannot be probed without a side effect, so the built-in connection test confirms the readable ones and leaves the rest to the dry run.
+This list was derived by tracing every API call in `immich-go`'s upload path rather than copied from documentation.
+
+The built-in connection test verifies **all** of them, including the write scopes, without creating anything. Read scopes are checked with a plain `GET`; write scopes get a request with a deliberately empty body, which Immich rejects during validation. Authorisation is checked before validation, so the status code is the answer: `403` means the scope is missing, while `400` means the scope is present and only the payload was refused.
 
 An optional **admin key** carrying `job.create` and `job.read` lets `immich-go` pause Immich's background jobs during the import, which makes a real difference on small hardware. Without one the tool passes `--pause-immich-jobs=false` so the run does not 403.
 
@@ -100,6 +122,22 @@ macOS blocks Terminal from reading external volumes until you allow it. The symp
 </div>
 
 <div align="center"><sub>English and Arabic. A light theme is included and follows the system setting by default.</sub></div>
+
+## Every option is explained
+
+Each switch and field carries an ⓘ that states its default, what changing it actually does, and the consequence — because a checkbox you don't understand is a checkbox you shouldn't have to gamble on.
+
+Options that carry risk are labelled on the row itself, before you open anything:
+
+| Badge | Meaning | Options |
+|---|---|---|
+| **changes what is imported** | Photos arrive that otherwise wouldn't, or arrive without metadata | trashed photos, photos with no JSON sidecar, untitled albums |
+| **deletes data** | Removes something already on the server | replace photos already on the server |
+| **security or privacy risk** | Weakens a check, or writes sensitive detail to disk | skip certificate check, log every API call |
+
+Only one option in the whole tool deletes anything, and it is off by default and needs a scope the recommended key does not have.
+
+Help text is written in English and Arabic. The other languages fall back to English per key, so a partial translation still leaves a usable interface.
 
 ## Adding a language
 
